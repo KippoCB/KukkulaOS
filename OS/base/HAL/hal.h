@@ -26,7 +26,7 @@ BYTE NTAPI hal_readPortByte(WORD port);
 
 //
 // Routine to write a BYTE to a port
-BYTE NTAPI hal_writePortByte(WORD port, BYTE value);
+VOID NTAPI hal_writePortByte(WORD port, BYTE value);
 
 //
 // Routine to disable interrupts
