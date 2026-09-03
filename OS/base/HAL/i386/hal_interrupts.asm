@@ -17,8 +17,10 @@ BITS 32
 ; Routine to disable the interrupts
 _hal_disableInterrupts@0:
     cli
+    ret
 
 ;
 ; Routine to re-enable interrupts
 _hal_enableInterrupts@0:
     sti
+    ret
