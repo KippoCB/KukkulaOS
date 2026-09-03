@@ -60,8 +60,8 @@ typedef LONG NTSTATUS;
 //
 // Standard NT calling convention for kernel functions
 //
-// This will push the arguments of an function from right to left(so VOID NTAPI foo(BYTE a, BYTE b, BYTE c) will be stored in the order c -> b -> a)
-// The compiler will also alter the name of the function in the final combined code to _foo(a, b, c)@12
+// This will push the arguments of an function from right to left to the stack(so VOID NTAPI foo(BYTE a, BYTE b, BYTE c) will be stored in the order c -> b -> a)
+// The compiler will also alter the name of the function in the final combined code to _foo(a, b, c)@6
 #define NTAPI __attribute__((stdcall))
 
 #endif // NTTYPES_H
