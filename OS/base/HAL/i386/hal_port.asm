@@ -29,13 +29,13 @@ _hal_readPortByte@4:
 
 ;
 ; Routine to write a BYTE value to the specified port
-_hal_writePortByte@6:
+_hal_writePortByte@8:
     ;
     ; Get the params
     ;
     ; Stack layout at the moment is:
-    ; [esp + 2] = BYTE value
-    ; [esp + 6] = WORD port
-    mov dx, [esp + 2]
-    mov al, [esp + 6]
+    ; [esp + 4] = BYTE value
+    ; [esp + 8] = WORD port
+    mov dx, [esp + 4]
+    mov al, [esp + 8]
     out dx, al
