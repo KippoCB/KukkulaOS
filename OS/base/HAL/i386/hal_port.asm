@@ -19,13 +19,16 @@ global _hal_readPortByte
 global _hal_writePortByte
 
 ;
-; Routine to read values from a BYTE from the specified port.
+; Routine to read BYTE values from the specified port.
 _hal_readPortByte@4:
     ;
     ; Find the parameter we passed to the function from the stack.
+    ;
+    ; Layout at the moment is:
+    ; [esp + 4] = WORD port
     mov dx, [esp + 4]
     in dx, al 
-    ret
+    ret 4
 
 ;
 ; Routine to write a BYTE value to the specified port
@@ -38,4 +41,5 @@ _hal_writePortByte@8:
     ; [esp + 8] = WORD port
     mov dx, [esp + 4]
     mov al, [esp + 8]
-    out dx, al
+    out al, dx
+    ret 8

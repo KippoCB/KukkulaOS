@@ -21,6 +21,14 @@
 #include <nttypes.h>
 
 //
+// Routine to initialize the global descriptor table
+VOID NTAPI hal_gdiInit();
+
+//
+// Routine to initialize the interrupt descriptor table
+VOID NTAPI hal_idtInit();
+
+//
 // Routine to read a BYTE from a port
 BYTE NTAPI hal_readPortByte(WORD port);
 
@@ -35,5 +43,9 @@ VOID NTAPI hal_disableInterrupts();
 //
 // Routine to enable interrupts
 VOID NTAPI hal_enableInterrupts();
+
+//
+// Routine to write a message into the serial port
+
 
 #endif // HAL_H
