@@ -1,0 +1,32 @@
+/* Set kmain as the program entry point */
+ENTRY(kmain)
+
+SECTIONS
+{
+    /* Start placing sections at address 0x100000 (1 MiB) */
+    . = 0x100000;
+
+    /* Code / executable instructions */
+    .text :
+    {
+        *(.text*)
+    }
+
+    /* Read-only data, such as constant strings */
+    .rodata :
+    {
+        *(.rodata*)
+    }
+
+    /* Initialized writable data */
+    .data :
+    {
+        *(.data*)
+    }
+
+    /* Uninitialized / zero-initialized data */
+    .bss :
+    {
+        *(.bss*)
+    }
+}
