@@ -1,0 +1,10 @@
+compile_commands.json
+*.exe
+*.o
+*.bin
+*.iso
+*.a
+*.so
+*.dll
+.cache/
+out/
