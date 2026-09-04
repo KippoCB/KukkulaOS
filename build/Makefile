@@ -1,7 +1,7 @@
-PROJDIR=E:/KukkulaOS
-NASMCMD="C:/Program Files/NASM/nasm.exe"
-DDCMD="C:/Program Files/DD/dd.exe"
-QEMUCMD="C:/Program Files/qemu/qemu-system-i386.exe"
+PROJDIR="../"
+NASMCMD="../buildtools/nasm/nasm.exe"
+DDCMD="../buildtools/dd.exe"
+QEMUCMD="../buildtools/qemu/qemu-system-i386.exe"
 
 init:
 	mkdir ${PROJDIR}/out
