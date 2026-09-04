@@ -43,8 +43,3 @@ typedef struct _TASK* PTASK;
 
 #endif // CPU_MANAGER_H
 
-// tää on varmaan ${asia3} = 1
-// kun €[tulos] == 1
-// niin (asia1{asia3[€tulos] = 2} = 4) = 7£
-
-// We will use the comment above for later problem solving
