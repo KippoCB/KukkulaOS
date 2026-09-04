@@ -9,6 +9,8 @@
 ; Edits:
 ;       KippoCB
 ;             * Create | 3.9.2026
+;       KippoCB
+;             * Fix routines | 4.9.2026
 ;
 ;=======================================================================
 BITS 32
@@ -24,7 +26,7 @@ _hal_readPortByte@4:
     ;
     ; Find the parameter we passed to the function from the stack.
     ;
-    ; Layout at the moment is:
+    ; Stack layout at the moment is:
     ; [esp + 4] = WORD port
     mov dx, [esp + 4]
     in dx, al 
