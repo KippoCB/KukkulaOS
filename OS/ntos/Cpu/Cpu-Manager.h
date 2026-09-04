@@ -42,3 +42,9 @@ typedef struct _TASK TASK;
 typedef struct _TASK* PTASK;
 
 #endif // CPU_MANAGER_H
+
+// tää on varmaan ${asia3} = 1
+// kun €[tulos] == 1
+// niin (asia1{asia3[€tulos] = 2} = 4) = 7£
+
+// uus error "Kermaa is not defined" en tiä miten korjaa
