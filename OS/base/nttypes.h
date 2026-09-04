@@ -54,8 +54,22 @@ typedef void VOID;
 typedef void* LPVOID;
 
 //
+// Large integer
+typedef union _LARGE_INTEGER {
+    struct {
+        ULONG LowPart;          // The lower 32 bits
+        ULONG HighPart;         // The higher 32 bits
+    } u;
+    LONGLONG quadPart;          // The whole value as a 64 bit value
+} LARGE_INTEGER, *PLARGE_INTEGER;
+
+//
 // NT status code. This code will be returned from the operations we can do during the system's runtime
 typedef LONG NTSTATUS;
+
+//
+// SIZE_T is the size of a given parameter or value in bytes
+typedef INT SIZE_T;
 
 //
 // Standard NT calling convention for kernel functions
@@ -63,5 +77,13 @@ typedef LONG NTSTATUS;
 // This will push the arguments of an function from right to left to the stack(so VOID NTAPI foo(BYTE a, BYTE b, BYTE c) will be stored in the order c -> b -> a)
 // The compiler will also alter the name of the function in the final combined code to _foo(a, b, c)@6
 #define NTAPI __attribute__((stdcall))
+
+//
+// Informational macros to inform the caller about what the function does to the given arguments
+#define IN // IN means the function only reads the value
+#define OUT // OUT means the passed value will be modified by the function
+#define OPTIONAL // OPTIONAL means the parameter is optional and is not needed
+
+typedef LARGE_INTEGER PHYSICAL_ADRESS, *PPHYSICAL_ADRESS;
 
 #endif // NTTYPES_H
